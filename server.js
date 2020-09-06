@@ -6,6 +6,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const mainDir = path.join(__dirname, "/public");
 
+const http = require(`http`);
+const server = http.Server(app);
+
 app.use(express.static("public"));
 app.use(express.urlencoded({
   extended: true
